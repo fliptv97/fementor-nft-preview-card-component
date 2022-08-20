@@ -1,6 +1,161 @@
+:root {
+    --main-bg: #0d192b;
+    --card-bg: #14253d;
+    --secondary-text-color: #8bacd9;
+    --line: #2f415b;
+    --cyan: #00fff7;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(100vw - calc(16px * 2));
+    height: 100vh;
+    padding: 0 16px;
+
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--main-bg);
+}
+
+.card {
+    max-width: calc(350px - calc(24px * 2));
+    min-width: calc(310px - calc(24px * 2));
+    padding: 24px;
+    padding-bottom: 32px;
+    border-radius: 15px;
+    background-color: var(--card-bg);
+}
+
+.card a {
+    text-decoration: none;
+    color: #fff;
+
+    transition: color 300ms ease-in-out;
+}
+
+.card a:hover {
+    color: var(--cyan);
+}
+
+.card__image-wrapper {
+    position: relative;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.card__image-wrapper:hover .card__image-overlay {
+    opacity: 0.5;
+}
+
+.card__image-wrapper > img {
+    width: 100%;
+
+    border-radius: 8px;
+}
+
+.card__image-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* TODO: I really don't know how to eliminate this 4 pixels */
+    height: calc(100% - 4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background-color: var(--cyan);
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.card__image-overlay img {
+    width: 48px;
+}
+
+.card__title {
+    margin-bottom: 16px;
+
+    font-size: 22px;
+    line-height: 28px;
+    color: #fff;
+}
+
+.card__description {
+    margin-bottom: 24px;
+
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 300;
+    color: var(--secondary-text-color);
+}
+
+.card__details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.card__price {
+    display: flex;
+    align-items: center;
+
+    color: var(--cyan);
+}
+
+.card__price img {
+    margin-right: 6px;
+}
+
+.card__countdown {
+    display: flex;
+    align-items: center;
+
+    color: var(--secondary-text-color);
+}
+
+.card__countdown img {
+    margin-right: 6px;
+}
+
+.card__separator {
+    margin: 0;
+    border-color: var(--line);
+}
+
+.card__author {
+    margin-top: 16px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+
+    color: var(--secondary-text-color);
+}
+
+.author__avatar {
+    width: 30px;
+    margin-right: 16px;
+
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
 .attribution {
+    position: fixed;
+    bottom: 16px;
+
     font-size: 11px;
     text-align: center;
+
+    color: #ccc;
 }
 
 .attribution a {
